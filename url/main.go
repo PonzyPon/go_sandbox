@@ -9,15 +9,15 @@ import (
 func main() {
 	endpoint := "https://www.examle.com"
 
-	url, _ := url.Parse(endpoint)
+	generatedURL, _ := url.Parse(endpoint)
 
-	url.Path = path.Join(url.Path, "test")
+	generatedURL.Path = path.Join(generatedURL.Path, "test")
 
-	query := url.Query()
+	query := generatedURL.Query()
 	query.Set("firstParam", "1")
 	query.Set("SecondParam", "two")
-	url.RawQuery = query.Encode()
+	generatedURL.RawQuery = query.Encode()
 
 	// https://www.examle.com/test?SecondParam=two&firstParam=1
-	fmt.Println(url.String())
+	fmt.Println(generatedURL.String())
 }
