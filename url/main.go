@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	var endpoint = "https://www.examle.com"
+	endpoint := "https://www.examle.com"
 
 	url, _ := url.Parse(endpoint)
 
