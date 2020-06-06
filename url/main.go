@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	endpoint := "https://www.examle.com"
+	endpoint := "https://www.examle.com?param=value"
 
 	generatedURL, _ := url.Parse(endpoint)
 
@@ -18,6 +18,6 @@ func main() {
 	query.Set("SecondParam", "two")
 	generatedURL.RawQuery = query.Encode()
 
-	// https://www.examle.com/test?SecondParam=two&firstParam=1
+	// https://www.examle.com/test?SecondParam=two&firstParam=1&param=value
 	fmt.Println(generatedURL.String())
 }
